@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joe | Desarrollador de Sistemas</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles.css"> 
-
 </head>
 <body>
 
@@ -27,24 +25,19 @@
             <div class="project-grid">
                 
                 <div class="project-card">
-                    <div class="project-media-container" style="margin-bottom: 15px;">
-                        <video width="100%" height="auto" autoplay muted loop playsinline 
-                               onclick="openLightbox()" 
-                               style="border-radius: 8px; border: 1px solid #444; cursor: zoom-in;" 
-                               title="Haz clic para ver en grande">
-                            <source src="PruebaHogarProtegido.mp4" type="video/mp4">
+                    <div class="project-media-container">
+                        <video id="mainVideo" width="100%" height="auto" autoplay muted loop playsinline title="Haz clic para ver en grande">
+                            <source src="VideoHP.mp4" type="video/mp4">
                         </video>
-                        <p style="font-size: 0.75rem; color: #888; text-align: center; margin-top: 5px;">
-                            🔍 Haz clic en el video para ampliar
-                        </p>
+                        <p class="zoom-text">🔍 Haz clic en el video para ampliar</p>
                     </div>
                     <h3>HogarProtegido - Tesorería</h3>
                     <p><span class="badge">C#</span> <span class="badge">WPF</span> <span class="badge">SQLite</span></p>
                     <p>Sistema profesional de gestión de ingresos y egresos. Modelo base con control de caja y reportes, ideal para PYMES.</p>
                     
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <div class="btn-group">
                         <a href="https://github.com/AIDORA28/hogarprotegido" target="_blank" class="btn">Ver Código</a>
-                        <a href="mailto:dev.joe.garcia@gmail.com?subject=Demo Tesorería" class="btn" style="background: #28a745;">Solicitar Demo</a>
+                        <a href="mailto:dev.joe.garcia@gmail.com?subject=Demo Tesorería" class="btn btn-success">Solicitar Demo</a>
                     </div>
                 </div>
 
@@ -53,7 +46,7 @@
                     <h3>E-commerce Store</h3>
                     <p><span class="badge">WordPress</span> <span class="badge">WooCommerce</span></p>
                     <p>Implementación y personalización de tienda virtual, enfocada en optimización de velocidad.</p>
-                    <a href="#" class="btn" style="background: #444;">En desarrollo</a>
+                    <a href="#" class="btn btn-dark">En desarrollo</a>
                 </div>
 
                 <div class="project-card">
@@ -63,11 +56,10 @@
                     <p>Aplicación web para gestión de datos persistentes con seguridad básica.</p>
                     <a href="#" class="btn">Repositorio</a>
                 </div>
-
             </div>
         </section>
 
-        <section style="text-align: center; margin-top: 0;">
+        <section class="contact-section">
             <h2>Contacto</h2>
             <p>¿Interesado en trabajar conmigo? ¡Hablemos!</p>
             <div class="contact-info">
@@ -78,10 +70,10 @@
         </section>
     </div>
 
-    <div id="videoLightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close-lightbox">&times;</span>
+    <div id="videoLightbox" class="lightbox">
+        <span class="close-lightbox" id="closeBtn">&times;</span>
         <video id="lightboxVideo" class="lightbox-content" controls>
-            <source src="PruebaHogarProtegido.mp4" type="video/mp4">
+            <source src="VideoHP.mp4" type="video/mp4">
         </video>
     </div>
 
