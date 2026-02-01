@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxVideo = document.getElementById('lightboxVideo');
     const closeBtn = document.getElementById('closeBtn');
 
-    // Al hacer clic en el video pequeño
+    // 1. Abrir al presionar el video pequeño
     if (mainVideo) {
         mainVideo.addEventListener('click', () => {
             lightbox.classList.add('active');
@@ -12,17 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Función para cerrar
+    // 2. Función para cerrar y resetear el video
     const closeFullVideo = () => {
         lightbox.classList.remove('active');
         lightboxVideo.pause();
         lightboxVideo.currentTime = 0;
     };
 
-    if (closeBtn) closeBtn.addEventListener('click', closeFullVideo);
+    // 3. Cerrar al presionar la X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeFullVideo);
+    }
 
-    // Cerrar si haces clic en el fondo negro
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeFullVideo();
-    });
+    // 4. CERRAR AL PRESIONAR CUALQUIER OTRO LADO (el fondo negro)
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            // Si el clic fue en el fondo negro y no en el video mismo
+            if (e.target === lightbox) {
+                closeFullVideo();
+            }
+        });
+    }
 });
